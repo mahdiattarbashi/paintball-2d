@@ -1,0 +1,8 @@
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\Shooter2D.Properties.Resources.resources
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\bin\Debug\Shooter2D.exe
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\bin\Debug\Shooter2D.pdb
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\Shooter2D.exe
+C:\Users\Thaynã Moreira\AppData\Local\Temporary Projects\Shooter2D\obj\x86\Debug\Shooter2D.pdb
