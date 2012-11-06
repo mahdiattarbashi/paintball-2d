@@ -19,10 +19,12 @@ namespace Shooter2D
         public Image spriteImage { get; set; }
         public double radianoColisao;
         public Point posicao;
+        public float rotacao;
 
-        public Sprite(Point initialPosition)
+        public Sprite(Point initialPosition, float angulo)
         {
             posicao = initialPosition;
+            rotacao = angulo;
             //spriteImage = new Bitmap(sprite);
             //radianoColisao = spriteImage.Width * .48;
         }

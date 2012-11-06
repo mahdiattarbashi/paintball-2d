@@ -29,7 +29,7 @@ namespace Shooter2D
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             
-            player = new Player(new Point(100, 100), 1, "MoreiraTk", new Bitmap(@"Images\Player.png"));
+            player = new Player(new Point(0, 0), 1, "MoreiraTk", new Bitmap(@"Images\Player.png"));
 
             //m.Rotate(30);
             //d.Transform = m;
@@ -47,7 +47,7 @@ namespace Shooter2D
             Graphics gg = Graphics.FromImage(returnBitmap);
             gg.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
             gg.RotateTransform(90);
-            gg.TranslateTransform(-(float)b.Height / 2, -(float)b.Width / 2);
+            gg.TranslateTransform(-(float)b.Height / 2, -(float)b.Width / 2-20);
             gg.DrawImage(b, new Point(0, 0));
             return returnBitmap;
         }
@@ -56,7 +56,13 @@ namespace Shooter2D
         {
             Graphics g = e.Graphics;
             //g.RotateTransform();
-            g.DrawImage(rotateImage(player.imageSprite), player.posicao);
+            Bitmap returnBitmap = new Bitmap(player.imageSprite.Height, player.imageSprite.Width);
+            g.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
+            g.RotateTransform(180);
+            g.TranslateTransform(-(float)player.imageSprite.Height / 2, -(float)player.imageSprite.Width / 2);
+
+            g.DrawImage(returnBitmap, new Point(0, 0));
+            g.DrawImage(player.imageSprite, player.posicao);
 
         }
 
@@ -76,7 +82,7 @@ namespace Shooter2D
         {
             if (e.KeyCode == Keys.W)
             {
-                //player.velocidade = Vector.CreateVectorFromAngle(0, 100);
+                player.velocidade = Vector.CreateVectorFromAngle(0, 100);
             }
             if (e.KeyCode == Keys.S)
             {

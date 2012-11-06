@@ -22,8 +22,8 @@ namespace Shooter2D
 
         public Image imageSprite;
 
-        public Player(Point firstPosition, int ident, string nick, Image image)
-            : base(firstPosition)
+        public Player(Point firstPosition, float angulo, int ident, string nick, Image image)
+            : base(firstPosition, angulo)
         {
             id = ident;
             name = nick;
