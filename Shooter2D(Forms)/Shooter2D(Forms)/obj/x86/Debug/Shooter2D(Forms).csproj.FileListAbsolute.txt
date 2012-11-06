@@ -8,3 +8,13 @@ C:\Users\Thaynã Moreira\documents\visual studio 2010\Projects\Shooter2D(Forms)\
 C:\Users\Thaynã Moreira\documents\visual studio 2010\Projects\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D(Forms).pdb
 C:\Users\Thaynã Moreira\documents\visual studio 2010\Projects\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D.Form1.resources
 C:\Users\Thaynã Moreira\documents\visual studio 2010\Projects\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\Player.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D(Forms).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D(Forms).pdb
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\Player.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Shooter2D(Forms).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Shooter2D(Forms).pdb
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D.Form1.resources
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\Shooter2D.Properties.Resources.resources
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\GenerateResource.write.1.tlog
