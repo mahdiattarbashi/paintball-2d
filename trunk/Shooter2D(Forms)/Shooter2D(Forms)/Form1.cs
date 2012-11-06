@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -14,7 +15,10 @@ namespace Shooter2D
     {
         DateTime start;
         Player player;
-
+        
+        //Graphics d;
+        //Matrix m = new Matrix();
+        
 
         System.Windows.Forms.Timer timer;
 
@@ -27,6 +31,9 @@ namespace Shooter2D
             
             player = new Player(new Point(100, 100), 1, "MoreiraTk", new Bitmap(@"Images\Player.png"));
 
+            //m.Rotate(30);
+            //d.Transform = m;
+
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 40;
             timer.Tick += new EventHandler(update);
@@ -34,10 +41,23 @@ namespace Shooter2D
 
         }
 
+        private Bitmap rotateImage(Image b)
+        {
+            Bitmap returnBitmap = new Bitmap(b.Height, b.Width);
+            Graphics gg = Graphics.FromImage(returnBitmap);
+            gg.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
+            gg.RotateTransform(90);
+            gg.TranslateTransform(-(float)b.Height / 2, -(float)b.Width / 2);
+            gg.DrawImage(b, new Point(0, 0));
+            return returnBitmap;
+        }
+
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawImage(player.imageSprite, player.posicao);
+            //g.RotateTransform();
+            g.DrawImage(rotateImage(player.imageSprite), player.posicao);
+
         }
 
         private void update(object sender, EventArgs e)
@@ -46,8 +66,7 @@ namespace Shooter2D
             double deltaTime = (now - start).Milliseconds / 1000.0;
             start = now;
 
-
-
+            
             player.posicao += (player.velocidade * deltaTime);
 
             Invalidate();
@@ -57,11 +76,12 @@ namespace Shooter2D
         {
             if (e.KeyCode == Keys.W)
             {
-                player.velocidade = Vector.CreateVectorFromAngle(0, 100);
+                //player.velocidade = Vector.CreateVectorFromAngle(0, 100);
             }
             if (e.KeyCode == Keys.S)
             {
                 player.velocidade = Vector.CreateVectorFromAngle(180, 100);
+
             }
             if (e.KeyCode == Keys.D)
             {
