@@ -1,0 +1,7 @@
+	Protocolo
+
+-Começa o jogo e pergunta se cada cliente esta pronto para jogar.
+-Sorteia quem começa.
+-O cliente diz qual peça vai usar, pra onde vai jogar e quanta força vai usar(ele clica na peça e arrasta como um elástico).
+-O servidor faz os calculos e diz se bateu na bola, se bateu em outra peça e se ñ bateu em nada.
+-Se bateu na bola verifica se ela saiu, foi gol ou ñ aconteceu nada.
