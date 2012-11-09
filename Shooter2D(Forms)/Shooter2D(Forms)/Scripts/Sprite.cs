@@ -13,10 +13,9 @@ namespace Shooter2D
 {
     public abstract class Sprite
     {
-        DateTime start;
         
         public Vector velocidade { get; set; }
-        public Image spriteImage { get; set; }
+        //public Image spriteImage { get; set; }
         public double radianoColisao;
         public Point posicao;
         public float rotacao;

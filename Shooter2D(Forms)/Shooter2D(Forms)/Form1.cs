@@ -15,7 +15,8 @@ namespace Shooter2D
     {
         DateTime start;
         Player player;
-        
+        Bala bala;
+
         //Graphics d;
         //Matrix m = new Matrix();
         
@@ -30,9 +31,7 @@ namespace Shooter2D
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             
             player = new Player(new Point(0, 0), 0, 1, "MoreiraTk", new Bitmap(@"Images\Player3.png"));
-
-            //m.Rotate(30);
-            //d.Transform = m;
+            bala = new Bala(new Point(0, 0), 0, new Bitmap(@"Images\Bala.png"));
 
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 40;
@@ -43,27 +42,20 @@ namespace Shooter2D
         
         private Bitmap rotateImage(Image b)
         {
-            Bitmap returnBitmap = new Bitmap(b.Width + 200, b.Height + 100);
+            Bitmap returnBitmap = new Bitmap(b.Width, b.Height);
             Graphics gg = Graphics.FromImage(returnBitmap);
             gg.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
             gg.RotateTransform(player.rotacao);
-            gg.TranslateTransform(-(float)returnBitmap.Height / 2, -(float)returnBitmap.Width / 2);
-            gg.DrawImage(b, new Point(b.Height / 2 -50, b.Width / 2));
+            gg.TranslateTransform(-(float)returnBitmap.Height, -(float)returnBitmap.Width);
+            gg.DrawImage(b, new Point(b.Height / 2, b.Width / 2));
             return returnBitmap;
         }
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            //g.RotateTransform();
-            /*Bitmap returnBitmap = new Bitmap(player.imageSprite.Height, player.imageSprite.Width);
-            g.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
-            g.RotateTransform(player.rotacao);
-            g.TranslateTransform(-((float)player.imageSprite.Height / 2) - (player.posicao.Y), -((float)player.imageSprite.Width / 2) - (player.posicao.X));
-
-            g.DrawImage(player.imageSprite, player.posicao);
-            g.DrawImage(returnBitmap, player.posicao);*/
-
+            
+            g.DrawImage(bala.imageSprite, bala.posicao);
             g.DrawImage(rotateImage(player.imageSprite), player.posicao);
         }
 
@@ -106,6 +98,11 @@ namespace Shooter2D
             if (e.KeyCode == Keys.Left)
             {
                 player.rotacao -= 5;
+            }
+
+            if (e.KeyCode == Keys.Space)
+            {
+                MoverBala(player.rotacao / 2, 50);
             }
         }
 
@@ -159,6 +156,20 @@ namespace Shooter2D
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }   
+        }
+
+        public void MoverBala(float angulo, int distance)
+        {
+            DateTime now = DateTime.Now;
+            double deltaTime = (now - start).Milliseconds / 1000.0;
+            start = now;
+
+            bala.posicao = player.posicao;
+
+            for(int i = 0; i )
+            {
+                bala.velocidade = Vector.CreateVectorFromAngle(angulo, distance*deltaTime);
+            }
+        }
     }
 }

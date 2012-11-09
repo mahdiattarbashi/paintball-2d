@@ -30,9 +30,9 @@ namespace Shooter2D
             objectsForDraw.Add(director, position);
         }
 
-        public void RemoveList(string director)
-        { 
-            objectsForDraw.Remove(director);
+        public void RemoveList(string diretorio)
+        {
+            objectsForDraw.Remove(diretorio);
         }
     }
 }
