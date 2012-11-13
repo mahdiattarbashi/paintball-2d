@@ -13,11 +13,11 @@ namespace Shooter2D
     public class ObjectsDraw
     {
 
-        public Dictionary<string, Point> objectsForDraw = new Dictionary<string, Point>();
-
+        //public Dictionary<Image, Point> objectsForDraw = new Dictionary<Image, Point>();
+        public Sprite[] objectsForDraw = new Sprite[100];
         public void ClearList()
         {
-            objectsForDraw.Clear();
+            //objectsForDraw.Clear();
         }
 
         public ObjectsDraw()
@@ -25,14 +25,16 @@ namespace Shooter2D
             ClearList();
         }
 
-        public void AddList(string director, Point position) 
+        public void AddList(Image director, Point position) 
         {
-            objectsForDraw.Add(director, position);
+            //objectsForDraw.Add(director, position);
+            
         }
 
-        public void RemoveList(string diretorio)
+        public void RemoveList(Image director, Point position)
         {
-            objectsForDraw.Remove(diretorio);
+            //objectsForDraw.Remove(diretorio);
         }
+
     }
 }

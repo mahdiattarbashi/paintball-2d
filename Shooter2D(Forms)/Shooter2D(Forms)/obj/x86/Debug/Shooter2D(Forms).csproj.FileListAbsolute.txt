@@ -19,3 +19,6 @@ C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\
 C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\Player3.png
 C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\Bala.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\Player4.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\PlayerRed3.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Forms)\bin\Debug\Images\PlayerRed4.png

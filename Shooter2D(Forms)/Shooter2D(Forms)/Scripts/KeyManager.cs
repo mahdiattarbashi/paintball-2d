@@ -29,6 +29,6 @@ namespace Shooter2D
         {
             return keys.Contains(key);
         }
-
+        
     }
 }

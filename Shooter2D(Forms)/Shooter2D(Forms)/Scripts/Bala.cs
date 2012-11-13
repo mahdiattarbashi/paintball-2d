@@ -24,7 +24,7 @@ namespace Shooter2D
         
 
         public Bala(Point firstPosition, float angulo, Image image)
-            : base(firstPosition, angulo)
+            : base(firstPosition, angulo, image)
         {
             imageSprite = image;
         }
