@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+
 
 namespace Shooter2D
 {
@@ -16,10 +21,16 @@ namespace Shooter2D
         DateTime start;
         Player player;
         Bala bala;
+        KeyManager keyMananger;
+        ObjectsDraw listDraw;
 
-        //Graphics d;
-        //Matrix m = new Matrix();
-        
+        bool podeAtirar;
+
+        bool game = true;
+
+        TcpClient client;
+        StreamReader leitorNet = null;
+        StreamWriter escritorNet = null;
 
         System.Windows.Forms.Timer timer;
 
@@ -29,9 +40,13 @@ namespace Shooter2D
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
-            
-            player = new Player(new Point(0, 0), 0, 1, "MoreiraTk", new Bitmap(@"Images\Player3.png"));
-            bala = new Bala(new Point(0, 0), 0, new Bitmap(@"Images\Bala.png"));
+
+            listDraw = new ObjectsDraw();
+            keyMananger = new KeyManager();
+            player = new Player(new Point(50, 50), 0, 1, "MoreiraTk", new Bitmap(@"Images\Player4.png"));
+            bala = new Bala(new Point(-40, -40), 0, new Bitmap(@"Images\Bala.png"));
+
+            listDraw.AddList(player.imageSprite, player.posicao);
 
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 40;
@@ -40,23 +55,29 @@ namespace Shooter2D
 
         }
         
-        private Bitmap rotateImage(Image b)
+        /*private Bitmap rotateImage(Image b, float rotation)
         {
-            Bitmap returnBitmap = new Bitmap(b.Width, b.Height);
+            Bitmap returnBitmap = new Bitmap(b.Width * 2, b.Height * 2);
             Graphics gg = Graphics.FromImage(returnBitmap);
             gg.TranslateTransform((float)returnBitmap.Width / 2, (float)returnBitmap.Height / 2);
-            gg.RotateTransform(player.rotacao);
+            gg.RotateTransform(rotation);
             gg.TranslateTransform(-(float)returnBitmap.Height, -(float)returnBitmap.Width);
-            gg.DrawImage(b, new Point(b.Height / 2, b.Width / 2));
+            gg.DrawImage(b, new Point(returnBitmap.Height - b.Height/2, returnBitmap.Width / 2));
             return returnBitmap;
-        }
+        }*/
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            
+
             g.DrawImage(bala.imageSprite, bala.posicao);
-            g.DrawImage(rotateImage(player.imageSprite), player.posicao);
+            //g.DrawImage(player.imageSprite, player.posicao);
+            
+            g.RotateTransform(player.rotacao);
+            g.TranslateTransform((float)player.posicao.X, ((float)player.posicao.Y), MatrixOrder.Append);
+            
+            //g.DrawRectangle(new Pen(Color.Blue, 3), -100, -40, 200, 80);
+            g.DrawImage(player.imageSprite, -player.imageSprite.Width / 2, -player.imageSprite.Height / 2, player.imageSprite.Width, player.imageSprite.Height);
         }
 
         private void update(object sender, EventArgs e)
@@ -65,8 +86,23 @@ namespace Shooter2D
             double deltaTime = (now - start).Milliseconds / 1000.0;
             start = now;
 
-            label1.Text = "posicao" + player.posicao + "    rotacao" + player.rotacao;
             player.posicao += (player.velocidade * deltaTime);
+            bala.posicao += (bala.velocidade * deltaTime);
+
+            if (game)
+            {
+                PortaTextBox.Visible = false;
+                IPTextBox.Visible = false;
+                ConectarButton.Visible = false;
+            }
+            
+            if (bala.posicao.X > Size.Width || bala.posicao.X < 0 || bala.posicao.Y > Size.Height || bala.posicao.Y < 0)
+            { podeAtirar = true; } else { podeAtirar = false; }
+
+            if (player.posicao.X > Size.Width || player.posicao.X < 0 || player.posicao.Y > Size.Height || player.posicao.Y < 0)
+            {
+                player.velocidade = Vector.CreateVectorFromAngle(0, 0);
+            }
 
             Invalidate();
         }
@@ -100,10 +136,15 @@ namespace Shooter2D
                 player.rotacao -= 5;
             }
 
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && podeAtirar == true)
             {
-                MoverBala(player.rotacao / 2, 50);
+                //MoverBala(player.rotacao / 2, 50);
+                bala.posicao = player.posicao;
+                bala.velocidade = Vector.CreateVectorFromAngle(player.rotacao, 1000);
             }
+
+            keyMananger.Add(e);
+
         }
 
          private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -126,6 +167,8 @@ namespace Shooter2D
             {
                 player.velocidade = Vector.CreateVectorFromAngle(270, 100);
             }*/
+
+             
         } 
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -146,6 +189,8 @@ namespace Shooter2D
             {
                 player.velocidade = new Vector(0, 0);
             }
+
+            keyMananger.Remove(e);
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -160,16 +205,56 @@ namespace Shooter2D
 
         public void MoverBala(float angulo, int distance)
         {
-            DateTime now = DateTime.Now;
-            double deltaTime = (now - start).Milliseconds / 1000.0;
-            start = now;
+            
+        }
 
-            bala.posicao = player.posicao;
-
-            for(int i = 0; i )
+        private void ConectarButton_Click(object sender, EventArgs e)
+        {
+            try
             {
-                bala.velocidade = Vector.CreateVectorFromAngle(angulo, distance*deltaTime);
+                int porta = Int32.Parse(PortaTextBox.Text);
+                client = new TcpClient(IPTextBox.Text, porta);
+                NetworkStream stream = client.GetStream();
+                leitorNet = new StreamReader(stream);
+                escritorNet = new StreamWriter(stream);
             }
+            catch (Exception err)
+            {
+                MessageBox.Show("Erro : " + err.Message);
+            }
+        }
+
+
+        private void CheckMenssage()
+        {
+            try
+            {
+                string data = leitorNet.ReadLine();
+
+                while (data != null)
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        //reactToMessage(data);
+                        //coloca a ação q deseja.
+                    });
+                    data = leitorNet.ReadLine();
+                }
+
+                client.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Erro lendo do servidor : " + err.Message);
+            }
+        }
+
+
+        private void Send(string acao)
+        {
+            escritorNet.Write(acao);
+            escritorNet.WriteLine();
+            escritorNet.Flush();
         }
     }
 }

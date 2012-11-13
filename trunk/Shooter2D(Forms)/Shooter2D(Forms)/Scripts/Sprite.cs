@@ -15,17 +15,17 @@ namespace Shooter2D
     {
         
         public Vector velocidade { get; set; }
-        //public Image spriteImage { get; set; }
+        public Image sprite { get; set; }
         public double radianoColisao;
         public Point posicao;
         public float rotacao;
 
-        public Sprite(Point initialPosition, float angulo)
+        public Sprite(Point initialPosition, float angulo , Image image)
         {
             posicao = initialPosition;
             rotacao = angulo;
-            //spriteImage = new Bitmap(sprite);
-            //radianoColisao = spriteImage.Width * .48;
+            sprite = new Bitmap(image);
+            radianoColisao = sprite.Width * .48;
         }
 
         public static bool Collides(Sprite s1, Sprite s2)
