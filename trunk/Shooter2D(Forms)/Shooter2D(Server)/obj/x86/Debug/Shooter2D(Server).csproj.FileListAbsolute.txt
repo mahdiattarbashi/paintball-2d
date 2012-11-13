@@ -1,0 +1,5 @@
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Server)\bin\Debug\Shooter2D(Server).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Server)\bin\Debug\Shooter2D(Server).pdb
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Server)\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Server)\obj\x86\Debug\Shooter2D(Server).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Server)\obj\x86\Debug\Shooter2D(Server).pdb

@@ -20,6 +20,7 @@ namespace Shooter2D
     {
         DateTime start;
         Player player;
+        Player player2;
         Bala bala;
         KeyManager keyMananger;
         ObjectsDraw listDraw;
@@ -44,6 +45,7 @@ namespace Shooter2D
             listDraw = new ObjectsDraw();
             keyMananger = new KeyManager();
             player = new Player(new Point(50, 50), 0, 1, "MoreiraTk", new Bitmap(@"Images\Player4.png"));
+            player2 = new Player(new Point(300, 300), 0, 1, "123", new Bitmap(@"Images\Player4.png"));
             bala = new Bala(new Point(-40, -40), 0, new Bitmap(@"Images\Bala.png"));
 
             listDraw.AddList(player.imageSprite, player.posicao);
@@ -71,8 +73,9 @@ namespace Shooter2D
             Graphics g = e.Graphics;
 
             g.DrawImage(bala.imageSprite, bala.posicao);
-            //g.DrawImage(player.imageSprite, player.posicao);
+            g.DrawImage(player2.imageSprite, player2.posicao.Y, player2.posicao.Y, player2.imageSprite.Width, player2.imageSprite.Height);
             
+
             g.RotateTransform(player.rotacao);
             g.TranslateTransform((float)player.posicao.X, ((float)player.posicao.Y), MatrixOrder.Append);
             
@@ -91,9 +94,12 @@ namespace Shooter2D
 
             if (game)
             {
-                PortaTextBox.Visible = false;
-                IPTextBox.Visible = false;
-                ConectarButton.Visible = false;
+                PainelGeral.Visible = false;
+                PainelGeral.Enabled = false;
+            }
+            else {
+                PainelGeral.Visible = true;
+                PainelGeral.Enabled = true;
             }
             
             if (bala.posicao.X > Size.Width || bala.posicao.X < 0 || bala.posicao.Y > Size.Height || bala.posicao.Y < 0)
@@ -102,6 +108,12 @@ namespace Shooter2D
             if (player.posicao.X > Size.Width || player.posicao.X < 0 || player.posicao.Y > Size.Height || player.posicao.Y < 0)
             {
                 player.velocidade = Vector.CreateVectorFromAngle(0, 0);
+            }
+
+            if (Sprite.Collides(bala, player2))
+            {
+                bala.posicao = new Point(-5000, -5000);
+                player2.posicao = new Point(-4000, -4000);
             }
 
             Invalidate();
@@ -208,7 +220,7 @@ namespace Shooter2D
             
         }
 
-        private void ConectarButton_Click(object sender, EventArgs e)
+        private void ConectarButton_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -256,5 +268,6 @@ namespace Shooter2D
             escritorNet.WriteLine();
             escritorNet.Flush();
         }
+
     }
 }
