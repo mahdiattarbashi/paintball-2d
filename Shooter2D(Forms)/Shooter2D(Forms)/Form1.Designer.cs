@@ -32,10 +32,10 @@
             this.IPLabel = new System.Windows.Forms.Label();
             this.PortaLabel = new System.Windows.Forms.Label();
             this.NomeTextBox = new System.Windows.Forms.TextBox();
-            this.PortaTextBox = new System.Windows.Forms.TextBox();
             this.IPTextBox = new System.Windows.Forms.TextBox();
             this.ConectarButton = new System.Windows.Forms.Button();
             this.PainelGeral = new System.Windows.Forms.Panel();
+            this.PortaTextBox = new System.Windows.Forms.TextBox();
             this.PainelGeral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,15 +74,6 @@
             this.NomeTextBox.TabIndex = 11;
             this.NomeTextBox.Text = "Seu Nome";
             // 
-            // PortaTextBox
-            // 
-            this.PortaTextBox.Location = new System.Drawing.Point(53, 146);
-            this.PortaTextBox.Name = "PortaTextBox";
-            this.PortaTextBox.Size = new System.Drawing.Size(130, 20);
-            this.PortaTextBox.TabIndex = 10;
-            this.PortaTextBox.Text = "50000";
-            this.PortaTextBox.TextChanged += new System.EventHandler(this.PortaTextBox_TextChanged);
-            // 
             // IPTextBox
             // 
             this.IPTextBox.Location = new System.Drawing.Point(53, 96);
@@ -103,17 +94,25 @@
             // 
             // PainelGeral
             // 
+            this.PainelGeral.Controls.Add(this.PortaTextBox);
             this.PainelGeral.Controls.Add(this.NomeTextBox);
             this.PainelGeral.Controls.Add(this.NomeLabel);
             this.PainelGeral.Controls.Add(this.ConectarButton);
             this.PainelGeral.Controls.Add(this.IPLabel);
             this.PainelGeral.Controls.Add(this.IPTextBox);
             this.PainelGeral.Controls.Add(this.PortaLabel);
-            this.PainelGeral.Controls.Add(this.PortaTextBox);
             this.PainelGeral.Location = new System.Drawing.Point(375, 100);
             this.PainelGeral.Name = "PainelGeral";
             this.PainelGeral.Size = new System.Drawing.Size(250, 250);
             this.PainelGeral.TabIndex = 15;
+            // 
+            // PortaTextBox
+            // 
+            this.PortaTextBox.Location = new System.Drawing.Point(53, 146);
+            this.PortaTextBox.Name = "PortaTextBox";
+            this.PortaTextBox.Size = new System.Drawing.Size(130, 20);
+            this.PortaTextBox.TabIndex = 15;
+            this.PortaTextBox.Text = "5000";
             // 
             // Form1
             // 
@@ -140,10 +139,10 @@
         private System.Windows.Forms.Label IPLabel;
         private System.Windows.Forms.Label PortaLabel;
         private System.Windows.Forms.TextBox NomeTextBox;
-        private System.Windows.Forms.TextBox PortaTextBox;
         private System.Windows.Forms.TextBox IPTextBox;
         private System.Windows.Forms.Button ConectarButton;
         private System.Windows.Forms.Panel PainelGeral;
+        private System.Windows.Forms.TextBox PortaTextBox;
 
 
 

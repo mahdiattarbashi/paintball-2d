@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Shooter2D_Server_
+namespace Shooter2D_Server
 {
     class Program
     {

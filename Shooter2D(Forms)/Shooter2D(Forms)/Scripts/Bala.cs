@@ -17,8 +17,6 @@ namespace Shooter2D
         public int MaxY { get; set; }
         public int MinY { get; set; }
 
-        DateTime start;
-
         public Image imageSprite;
         private Point point;
         
@@ -27,15 +25,7 @@ namespace Shooter2D
             : base(firstPosition, angulo, image)
         {
             imageSprite = image;
+            point = firstPosition;
         }
-
-        public void MoverBala(float angulo, int distance)
-        {
-            DateTime now = DateTime.Now;
-            double deltaTime = (now - start).Milliseconds / 1000.0;
-            start = now;
-            float contador = 0;  
-        }
-        
     }
 }

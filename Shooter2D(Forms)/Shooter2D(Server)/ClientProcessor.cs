@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Shooter2D_Server_
+namespace Shooter2D_Server
 {
     public class ClientProcessor
     {
@@ -22,6 +22,7 @@ namespace Shooter2D_Server_
         int _id;
         StreamReader reader = null;
         StreamWriter writer = null;
+        
 
         public ClientProcessor(GameState gameState, int id, TcpClient client)
         {
