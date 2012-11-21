@@ -7,17 +7,17 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Shooter2D_Server_
+namespace Shooter2D_Server
 {
     public class GameState
     {
-        const int MAX_PLAYERS = 32;
+        const int MAX_PLAYERS = 2;
         
         int lastId = 0;
         ClientProcessor[] players;
         
         bool ready = false;
-        int turn = 0;
+        //int turn = 0;
 
         public bool isReady()
         {

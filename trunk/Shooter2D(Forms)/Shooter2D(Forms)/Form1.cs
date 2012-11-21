@@ -50,6 +50,8 @@ namespace Shooter2D
 
             listDraw.AddList(player.imageSprite, player.posicao);
 
+
+
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 40;
             timer.Tick += new EventHandler(update);
