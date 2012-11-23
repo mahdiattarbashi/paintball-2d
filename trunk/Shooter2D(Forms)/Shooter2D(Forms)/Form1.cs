@@ -264,12 +264,14 @@ namespace Shooter2D
         }
 
 
-        private void Send(string acao)
+        public void Send(string acao)
         {
             escritorNet.Write(acao);
             escritorNet.WriteLine();
             escritorNet.Flush();
         }
+
+        private 
 
     }
 }
