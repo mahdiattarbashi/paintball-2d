@@ -41,7 +41,7 @@ namespace Shooter2D_Server
             String data = null;
 
             // envia id para cliente
-            //send("Jogando com " + gameState.playerChar[_id]);
+            send("Jogando com " + id);
 
             // faz leitura de uma linha do cliente
             data = reader.ReadLine();
