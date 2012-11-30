@@ -1,0 +1,12 @@
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\bin\Debug\Images\Bala.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\bin\Debug\Images\PlayerCT.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\bin\Debug\Images\PlayerTerror.png
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\bin\Debug\Shooter2D(Client).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\bin\Debug\Shooter2D(Client).pdb
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\Shooter2D_Client_.Form1.resources
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\Shooter2D_Client_.Properties.Resources.resources
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\Shooter2D(Client).exe
+C:\Users\Thaynã Moreira\Desktop\paintball-2d\Shooter2D(Forms)\Shooter2D(Client)\obj\x86\Debug\Shooter2D(Client).pdb
