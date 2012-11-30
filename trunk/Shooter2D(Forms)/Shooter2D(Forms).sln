@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooter2D(Forms)", "Shooter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooter2D(Server)", "Shooter2D(Server)\Shooter2D(Server).csproj", "{11B47B86-AE1F-4F6D-B4FB-0E33F081632F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooter2D(Client)", "Shooter2D(Client)\Shooter2D(Client).csproj", "{3B6AAA20-B5C0-4F06-8A35-E4B3CA1F2242}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{11B47B86-AE1F-4F6D-B4FB-0E33F081632F}.Debug|x86.Build.0 = Debug|x86
 		{11B47B86-AE1F-4F6D-B4FB-0E33F081632F}.Release|x86.ActiveCfg = Release|x86
 		{11B47B86-AE1F-4F6D-B4FB-0E33F081632F}.Release|x86.Build.0 = Release|x86
+		{3B6AAA20-B5C0-4F06-8A35-E4B3CA1F2242}.Debug|x86.ActiveCfg = Debug|x86
+		{3B6AAA20-B5C0-4F06-8A35-E4B3CA1F2242}.Debug|x86.Build.0 = Debug|x86
+		{3B6AAA20-B5C0-4F06-8A35-E4B3CA1F2242}.Release|x86.ActiveCfg = Release|x86
+		{3B6AAA20-B5C0-4F06-8A35-E4B3CA1F2242}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -217,11 +217,6 @@ namespace Shooter2D
 
         }
 
-        public void MoverBala(float angulo, int distance)
-        {
-            
-        }
-
         private void ConectarButton_Click_1(object sender, EventArgs e)
         {
             try
@@ -270,8 +265,6 @@ namespace Shooter2D
             escritorNet.WriteLine();
             escritorNet.Flush();
         }
-
-        private 
 
     }
 }
